@@ -40,8 +40,6 @@ namespace agencja.DAL
             };
             pracownicy.ForEach(s => context.Pracownicy.Add(s));
             context.SaveChanges();
-
         }
-
     }
 }

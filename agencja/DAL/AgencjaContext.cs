@@ -17,6 +17,7 @@ namespace agencja.DAL
         public DbSet<Koncert> Koncerty { get; set; }
         public DbSet<Pracownik> Pracownicy { get; set; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
