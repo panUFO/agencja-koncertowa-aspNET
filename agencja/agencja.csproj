@@ -299,6 +299,7 @@
     <Content Include="Views\Shared\AuthorizeFailedcshtml.cshtml" />
     <Content Include="Views\Shared\_KoncertL.cshtml" />
     <Content Include="Views\Shared\_KlubL.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
