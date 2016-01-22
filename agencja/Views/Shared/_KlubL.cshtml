@@ -1,0 +1,16 @@
+﻿@model agencja.Models.Klub
+
+<td>
+    @Html.DisplayFor(model => model.Nazwa)
+</td>
+<td>
+    @Html.DisplayFor(model => model.Miasto)
+</td>
+<td>
+    @Html.DisplayFor(model => model.Ilosc_miejsc)
+</td>
+<td>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Details", "Details", new { id = Model.ID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+</td>

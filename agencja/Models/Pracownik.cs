@@ -15,7 +15,10 @@ namespace agencja.Models
         [DisplayName("Imię"), Required(ErrorMessage = "Wprowadź imię.")]
         public string Imie { get; set; }
 
-        [DisplayName("Nazwisko"), Required(ErrorMessage = "Wprowadź nazwisko.")]
+
+        [DisplayName("Nazwisko")]
+        [StringLength(30, MinimumLength = 2)]
+        [Required(ErrorMessage = "Nazwisko jest za krótkie")]
         public string Nazwisko { get; set; }
 
         [Required]

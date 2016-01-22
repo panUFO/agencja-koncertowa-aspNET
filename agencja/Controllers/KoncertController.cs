@@ -19,6 +19,7 @@ namespace agencja.Controllers
         // GET: Koncert
         public ActionResult Index()
         {
+            var koncerty = db.Koncerty.Include(k => k.Klub);
             return View(db.Koncerty.ToList());
         }
 
@@ -59,6 +60,7 @@ namespace agencja.Controllers
         [AuthLog(Roles = "Pracownik")]
         public ActionResult Create()
         {
+            ViewBag.KlubID = new SelectList(db.Kluby, "ID", "Nazwa");
             return View();
         }
 
@@ -75,11 +77,12 @@ namespace agencja.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.KlubID = new SelectList(db.Kluby, "ID", "Nazwa", koncert.IDKlub);
             return View(koncert);
         }
 
         // GET: Koncert/Edit/5
+        [AuthLog(Roles = "Pracownik")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +94,7 @@ namespace agencja.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.KlubID = new SelectList(db.Kluby, "ID", "Nazwa", koncert.IDKlub);
             return View(koncert);
         }
 
@@ -107,6 +111,7 @@ namespace agencja.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.KlubID = new SelectList(db.Kluby, "ID", "Nazwa", koncert.IDKlub);
             return View(koncert);
         }
 

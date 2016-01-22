@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using agencja.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using agencja.CustomFilters;
 
 namespace agencja.Controllers
 {
@@ -31,6 +32,7 @@ namespace agencja.Controllers
         /// Create  a New role
         /// </summary>
         /// <returns></returns>
+        [AuthLog(Roles = "admin")]
         public ActionResult Create()
         {
             var Role = new IdentityRole();

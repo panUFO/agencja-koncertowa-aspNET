@@ -1,0 +1,17 @@
+﻿@model agencja.Models.Koncert
+
+<td>
+    @Html.DisplayFor(model => model.Klub.Nazwa)
+    @Html.DisplayFor(model => model.IDKlub)
+</td>
+<td>
+    @Html.DisplayFor(model => model.Nazwa)
+</td>
+<td>
+    @Html.DisplayFor(model => model.cena_biletu)
+</td>
+<td>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Details", "Details", new { id = Model.ID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.ID })
+</td>
